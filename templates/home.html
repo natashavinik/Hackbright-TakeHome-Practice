@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}MELON APPOINTMENTS{% endblock %}
+
+{% block body %}
+
+
+
+    <form action="/login" method="POST">
+        <div class="row g-2 align-items-center">
+          <div class="col-auto">
+            <label for="inputEmail" class="col-form-label">Email</label>
+          </div>
+        <div class="col-auto">
+        <input type="text" class="form-control" name="email">
+      </div></div>
+      </p>
+        <p>
+          <input class="btn btn-primary" type="submit">
+        </p>
+      </form>
+
+<p>
+Appointments for melons
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Users Appointments{% endblock %}
+
+{% block body %}
+
+
+
+<!-- We want to make a for loop that loops through times
+and for each one makes a little card with a button -->
+<div id="result-text">
+Available appointments for {{ start_time_list[0].strftime("%d-%b-%Y") }}
+<p>
+{% for starttime in start_time_list %}
+
+<button class="make-appt" id="{{user_id}}" value="{{starttime}}">{{ starttime.strftime("%I:%M %p") }}</button>
+
+<p>
+{% endfor %}
+
+</div>
+
+<a href="seescheduled/{{user_id}}">Click Here to See Your Scheduled Appointments</a>
+<p>
+
+<a href ="/users/{{user_id}}">Click here to Make a New Appointment</a>
+
+<!-- 
+BELOW IS TO CREATE AN APPOINTMENT
+<form action="/makeappt" id="makeappt" method="POST">
+    <p>
+    <input type="date" name="searchdate">
+    </p>
+    Pick a time range:
+    <p>
+        Start time:
+    <input type="time" step="600" name="starttime">
+    <p></p>
+        End time:
+        <input type="time" step="600" name="endtime">
+                
+    </p>
+    <button type="submit">Check!</button>
+    </form> -->
+
+
+    
+
+</p>
+<script src="/static/makeappt.js"></script>
+
+
+
+{% endblock %}

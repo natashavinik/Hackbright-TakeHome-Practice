@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Users Appointments{% endblock %}
+
+{% block head %}
+<script type="text/javascript" src="/static/caleandar.js"></script>
+
+{% endblock %}
+
+{% block body %}
+hello {{user_id}}
+
+Pick a date: 
+<form action="/seeavailable" id="Checkdate" method="POST">
+<p>
+<input type="date" id="dadate" name="searchdate">
+<p>
+<input type="hidden" name="userid" value={{user_id}} />
+<input type="hidden" name="alluserdates" value={{list_s_dates}} /> 
+</p>
+</p>
+Pick a time range:
+<p>
+    Start time:
+<input type="time" step="60" name="starttime">
+<p></p>
+    End time:
+    <input type="time" step="60" name="endtime">
+            
+</p>
+<button type="submit">Check!</button>
+</form>
+
+
+<p>
+    <a href="/seescheduled/{{user_id}}">Click Here to See Your Scheduled Appointments</a>
+
+
+
+{% endblock %}

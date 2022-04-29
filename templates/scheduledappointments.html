@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Users Appointments{% endblock %}
+
+{% block body %}
+<script type="text/javascript" src="/static/caleandar.js"></script>
+        
+HERE ARE ALL OF YOUR SCHEDULED APPTS
+<p>
+            
+{% for appt in apptlist %}
+{{appt.date}} at {{appt.start_time.strftime("%I:%M %p")}} until {{appt.end_time.strftime("%I:%M %p")}}<br>
+
+<p>
+{% endfor %}
+
+<a href ="/{{user_id}}">Click here to Make a New Appointment</a>
+
+
+
+{% endblock %}
